@@ -1,2 +1,7 @@
-export const name = 'modify';
-export const age = 18;
+export let name = 'modify';
+
+name += ' by';
+name += ' rollup';
+
+export let age = 18;
+age++;
