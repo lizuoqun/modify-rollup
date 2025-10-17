@@ -6,6 +6,8 @@ console.log('snip----', ms.snip(0, 6).toString());
 
 console.log('remove----', ms.remove(0, 7).toString());
 
+console.log('update----', ms.update(7, 12, 'let').toString());
+
 const bundle = new MagicString.Bundle();
 bundle.addSource({
   content: `const a = 'magic-string'`,
