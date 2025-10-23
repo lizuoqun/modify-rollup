@@ -5,4 +5,9 @@ const say = () => {
   console.log('age:', age);
 };
 
+if (true) {
+  var flag = true;
+}
+
 say();
+console.log('flag:', flag);
