@@ -9,7 +9,7 @@ function build() {
     options() {
       console.log('options');
     },
-    buildStart() {
+    buildStart(inputOptions) {
       console.log('buildStart');
     },
     async resolveId(source, importer) {
