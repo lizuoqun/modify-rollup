@@ -14,7 +14,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@vue/reactivity": "^3.5.22",
     "acorn": "^8.15.0",
+    "lit-html": "^3.3.1",
     "magic-string": "^0.30.19",
     "rollup": "^4.52.4"
   },

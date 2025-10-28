@@ -19,7 +19,7 @@ function build() {
       console.log('load', id);
     },
     async transform(code, id) {
-      console.log('transform', code, id);
+      return `${code}\nconsole.log("transform", ${JSON.stringify(id)});`;
     },
     buildEnd() {
       console.log('buildEnd');
