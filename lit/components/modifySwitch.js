@@ -9,6 +9,10 @@ class ModifySwitch extends BaseHTMLElement {
   handleChange() {
     this.state.checked = !this.state.checked;
     console.log('checked:', this.state.checked);
+    // 抛出事件
+    this.dispatchEvent(new CustomEvent('change', {
+      detail: this.state.checked
+    }));
   }
 
   render() {
@@ -64,12 +68,21 @@ class ModifySwitch extends BaseHTMLElement {
             .switch input:checked + .slider:before {
                 transform: translateX(1.5em);
             }
+
+            .center {
+                margin-top: 1rem;
+                font-size: 24px;
+                color: #f40;
+            }
         </style>
         <label class="switch">
             <input type="checkbox" @change=${this.handleChange.bind(this)}>
             <span class="slider"></span>
         </label>
         <div>${this.state.checked ? 'ON' : 'OFF'}</div>
+        <div class="center">
+            <slot name="center"></slot>
+        </div>
     `;
   }
 }

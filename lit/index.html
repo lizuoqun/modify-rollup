@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Rollup Lit</title>
 </head>
@@ -7,12 +8,13 @@
 <script type="module" src="./components/modifySwitch.js"></script>
 <script type="module" src="./main.js"></script>
 <modify-switch>
-    <template #before>
-        <span>Before</span>
-    </template>
-    <template #after>
-        <span>After</span>
-    </template>
+    <span slot="center">Switch</span>
 </modify-switch>
 </body>
+<script>
+  const switchElement = document.querySelector('modify-switch');
+  switchElement.addEventListener('change', (e) => {
+    console.log('change:', e.detail);
+  });
+</script>
 </html>

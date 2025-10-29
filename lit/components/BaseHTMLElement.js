@@ -5,12 +5,13 @@ export default class BaseHTMLElement extends HTMLElement {
   html = html;
 
   connectedCallback() {
+    this.attachShadow({mode: 'open'});
     if (isReactive(this.state)) {
       this.state = reactive(this.state) || {};
     }
     effect(() => {
       const content = this.render();
-      render(content, this);
+      render(content, this.shadowRoot);
     });
   }
 }
